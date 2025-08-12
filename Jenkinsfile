@@ -1,10 +1,4 @@
 pipeline {
-    agent {
-    node {
-        label 'agent1'
-        customWorkspace '/home/ltabanao'
-    }
-}
     agent { dockerfile true }
     stages {
         stage('Test') {
