@@ -1,11 +1,17 @@
 pipeline {
-    agent { dockerfile true }
+
+    agent { dockerfile {
+
+    filename "/Dockerfile"
+    registryUrl ""
+    registryCredentialsId 'dockerHub'
+
+
+    }}
     stages {
-        stage('Test') {
+        stage('Build') {
             steps {
-                sh 'node --version'
-                sh 'svn --version'
+                echo 'hello !'
+                sh 'echo LM_LICENSE_FILE = $LM_LICENSE_FILE'
             }
         }
-    }
-}
