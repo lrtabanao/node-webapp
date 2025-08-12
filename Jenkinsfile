@@ -1,4 +1,5 @@
 pipeline {
+    agent linux-node
     agent { dockerfile true }
     stages {
         stage('Test') {
